@@ -84,9 +84,27 @@ print(f"El número que has introducido es {numero}")
 # Imprime los números del 10 al 1 usando un bucle while.
 print("\nEjercicio 1:")
 
+contador = 10
+
+while contador != 0:
+  print(contador)
+  contador -= 1
+
+
 # Ejercicio 2: Suma de números pares (while)
 # Calcula la suma de los números pares entre 1 y 20 (inclusive) usando un bucle while.
 print("\nEjercicio 2:")
+
+num = 1
+suma = 0
+while num <= 20:
+  if num % 2 == 0:
+    suma += num
+  num += 1
+
+print(f"La suma es:{suma}")
+
+
 
 # Ejercicio 3: Factorial de un número
 # Pide al usuario que introduzca un número entero positivo.
@@ -95,6 +113,17 @@ print("\nEjercicio 2:")
 # 5! = 5 x 4 x 3 x 2 x 1 = 120.
 print("\nEjercicio 3:")
 
+numero = int(input("Introduzca un número entero positivo:"))
+num = 1
+multiplicacion = 1
+
+while num <= numero:
+  multiplicacion *= num
+  num += 1
+
+print(multiplicacion)
+
+
 # Ejercicio 4: Validación de contraseña
 # Pide al usuario que introduzca una contraseña.
 # La contraseña debe tener al menos 8 caracteres.
@@ -102,12 +131,45 @@ print("\nEjercicio 3:")
 # Si la contraseña es válida, imprime "Contraseña válida".
 print("\nEjercicio 4:")
 
+contraseña = ""
+
+while len(contraseña) < 8:
+  contraseña = input("Escribe una contraseña:")
+  if len(contraseña) < 8:
+    print("Contraseña inválida")
+
+print("Contraseña válida")
+
+
 # Ejercicio 5: Tabla de multiplicar
 # Pide al usuario que introduzca un número.
 # Imprime la tabla de multiplicar de ese número (del 1 al 10) usando un bucle while.
 print("\nEjercicio 5:")
 
+numero = int(input("Introduzca un número:"))
+num = 1
+
+while num <= 10:
+  print(f"{numero} x {num} = {num * numero}")
+  num += 1
+
 # Ejercicio 6: Números primos hasta N
 # Pide al usuario que introduzca un número entero positivo N.
 # Imprime todos los números primos menores o iguales que N usando un bucle while.
 print("\nEjercicio 6:")
+
+numero = int(input("Introduzca un número:"))
+num = 2
+
+while num <= numero:
+  es_primo = True
+  divisor = 2
+  while divisor * divisor <= num:
+    if num % divisor == 0:
+     es_primo = False
+     break
+    divisor += 1
+  if es_primo:
+   print(num)
+
+  num += 1
